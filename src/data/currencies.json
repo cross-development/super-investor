@@ -1,0 +1,56 @@
+{
+  "currencies": [
+    {
+      "currency": "uah",
+      "depositTypes": [
+        { "type": "Доходный", "rate": 5.5, "minTerm": 1, "minAmount": 500.0 },
+        {
+          "type": "Накопительный",
+          "rate": 6.5,
+          "minTerm": 3,
+          "minAmount": 5000.0
+        },
+        { "type": "Свободный", "rate": 4.0, "minTerm": 6, "minAmount": 100.0 }
+      ]
+    },
+    {
+      "currency": "rub",
+      "depositTypes": [
+        { "type": "Доходный", "rate": 5.5, "minTerm": 1, "minAmount": 500.0 },
+        {
+          "type": "Накопительный",
+          "rate": 6.5,
+          "minTerm": 3,
+          "minAmount": 5000.0
+        },
+        { "type": "Свободный", "rate": 4.0, "minTerm": 6, "minAmount": 100.0 }
+      ]
+    },
+    {
+      "currency": "eur",
+      "depositTypes": [
+        { "type": "Доходный", "rate": 5.5, "minTerm": 1, "minAmount": 500.0 },
+        {
+          "type": "Накопительный",
+          "rate": 6.5,
+          "minTerm": 3,
+          "minAmount": 5000.0
+        },
+        { "type": "Свободный", "rate": 4.0, "minTerm": 6, "minAmount": 100.0 }
+      ]
+    },
+    {
+      "currency": "usd",
+      "depositTypes": [
+        { "type": "Доходный", "rate": 5.5, "minTerm": 1, "minAmount": 500.0 },
+        {
+          "type": "Накопительный",
+          "rate": 6.5,
+          "minTerm": 3,
+          "minAmount": 5000.0
+        },
+        { "type": "Свободный", "rate": 4.0, "minTerm": 6, "minAmount": 100.0 }
+      ]
+    }
+  ]
+}
