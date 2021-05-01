@@ -1,18 +1,21 @@
 //Core
-import React from 'react'
+import React from "react";
+//Packages
+import Slider from "rc-slider";
 //Styles
-import {} from './DepositParams.styles'
+import {} from "./DepositParams.styles";
+import "rc-slider/assets/index.css";
 
-interface Props {
-    
-}
+interface Props {}
 
 const DepositParams = (props: Props) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+  return (
+    <div>
+      <Slider />
 
-export default DepositParams
+      <Slider />
+    </div>
+  );
+};
+
+export default DepositParams;

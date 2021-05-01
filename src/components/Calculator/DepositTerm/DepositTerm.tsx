@@ -1,18 +1,21 @@
 //Core
-import React from 'react'
+import { useState } from "react";
+//Packages
+import DatePicker from "react-datepicker";
 //Styles
-import {} from './DepositTerm.styles'
+import { CalendarWrap } from "./DepositTerm.styles";
+import "react-datepicker/dist/react-datepicker.css";
 
-interface Props {
-    
-}
+interface IProps {}
 
-const DepositTerm = (props: Props) => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+const DepositTerm = ({ onChangeDate, startDate }: IProps) => {
+  return (
+    <CalendarWrap>
+      <DatePicker selected={startDate} onChange={onChangeDate} />
 
-export default DepositTerm
+      <DatePicker selected={startDate} onChange={onChangeDate} />
+    </CalendarWrap>
+  );
+};
+
+export default DepositTerm;
