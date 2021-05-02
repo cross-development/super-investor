@@ -1,9 +1,14 @@
 //Core
 import { FormEvent, useState } from "react";
 //Components
-import Calculator from "components/Calculator";
-import TotalResults from "components/TotalResults";
+import DepositType from "./DepositType";
+import DepositParams from "./DepositParams";
+import DepositTerm from "./DepositTerm";
+import BarChart from "./BarChart";
+import Calculation from "./Calculation";
+import SubmitButton from "./SubmitButton";
 import { Layout, DepositForm } from "components/Commons";
+import { Calculator, TotalResults } from "components/Commons";
 //Helpers
 import { ITotal } from "helpers/interfaces";
 
@@ -14,7 +19,6 @@ function App() {
   const [term, setTerm] = useState(0);
   const [rate, setRate] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
 
   const [totalResults, setTotalResults] = useState<ITotal>({} as ITotal);
 
@@ -25,13 +29,7 @@ function App() {
 
     const profit = ((amount * rate) / 12) * term;
     const amountWithProfit = amount + profit;
-
-    const total = {
-      currency,
-      amount,
-      amountWithProfit,
-      profit,
-    };
+    const total = { currency, amount, amountWithProfit, profit };
 
     handleDeposit(total);
   };
@@ -39,9 +37,21 @@ function App() {
   return (
     <Layout>
       <DepositForm onSubmit={handleSubmit}>
-        <Calculator />
+        <Calculator>
+          <DepositType />
+          <DepositParams />
+          <DepositTerm
+            term={term}
+            startDate={startDate}
+            onChangeStartDate={setStartDate}
+          />
+        </Calculator>
 
-        <TotalResults total={totalResults} />
+        <TotalResults>
+          <BarChart totalResults={totalResults} />
+          <Calculation totalResults={totalResults} />
+          <SubmitButton type="submit" />
+        </TotalResults>
       </DepositForm>
     </Layout>
   );

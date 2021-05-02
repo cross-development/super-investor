@@ -6,9 +6,9 @@ import Slider from "rc-slider";
 import {} from "./DepositParams.styles";
 import "rc-slider/assets/index.css";
 
-interface Props {}
+interface IProps {}
 
-const DepositParams = (props: Props) => {
+const DepositParams = (props: IProps) => {
   return (
     <div>
       <Slider />
