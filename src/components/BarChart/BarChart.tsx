@@ -36,8 +36,6 @@ const BarChart = ({ totalResults }: IProps) => {
         labels: { show: false },
         axisBorder: { show: false },
         axisTicks: { show: false },
-        // crosshairs: { show: false },
-        // tooltip: { enabled: false },
       },
       yaxis: { show: false },
     },

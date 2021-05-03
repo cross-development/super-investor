@@ -1,6 +1,10 @@
 //Core
 import styled from "styled-components";
 
-const CalendarWrap = styled.div``;
+const Wrapper = styled.div``;
 
-export { CalendarWrap };
+const RateWrap = styled.div``;
+
+const Rate = styled.p``;
+
+export { Wrapper, RateWrap, Rate };

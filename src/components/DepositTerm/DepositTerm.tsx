@@ -1,36 +1,26 @@
-//Core
-import { useState } from "react";
 //Packages
-import DatePicker from "react-datepicker";
+import Slider from "rc-slider";
 //Styles
-import { CalendarWrap } from "./DepositTerm.styles";
-import "react-datepicker/dist/react-datepicker.css";
+import { Wrapper, RateWrap, Rate } from "./DepositTerm.styles";
 
 interface IProps {
+  rate: number;
   term: number;
-  startDate: Date;
-  onChangeStartDate: (date: Date) => void;
+  onChangeTerm: (term: number) => void;
 }
 
-const DepositTerm = ({ onChangeStartDate, startDate, term }: IProps) => {
-  const endDate = new Date(startDate);
-  endDate.setMonth(endDate.getMonth() + term);
-
+const DepositTerm = ({ rate, term, onChangeTerm }: IProps) => {
   return (
-    <CalendarWrap>
-      <DatePicker
-        selected={startDate}
-        dateFormat="dd MMMM yyyy"
-        onChange={onChangeStartDate}
-      />
+    <Wrapper>
+      <Slider value={term} onChange={onChangeTerm} />
 
-      <DatePicker
-        disabled
-        selected={endDate}
-        dateFormat="dd MMMM yyyy"
-        onChange={() => {}}
-      />
-    </CalendarWrap>
+      <RateWrap>
+        <Rate>
+          Процентная ставка
+          {rate}% <span>годовых</span>
+        </Rate>
+      </RateWrap>
+    </Wrapper>
   );
 };
 

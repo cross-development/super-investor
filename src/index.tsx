@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import App from "components/App";
 //Styles
 import GlobalStyles from "styles/index.styles";
+import "rc-slider/assets/index.css";
 
 ReactDOM.render(
   <>

@@ -2,8 +2,9 @@
 import { FormEvent, useState } from "react";
 //Components
 import DepositType from "./DepositType";
-import DepositParams from "./DepositParams";
+import DepositAmount from "./DepositAmount";
 import DepositTerm from "./DepositTerm";
+import DepositDate from "./DepositDate";
 import BarChart from "./BarChart";
 import Calculation from "./Calculation";
 import SubmitButton from "./SubmitButton";
@@ -39,8 +40,13 @@ function App() {
       <DepositForm onSubmit={handleSubmit}>
         <Calculator>
           <DepositType />
-          <DepositParams />
-          <DepositTerm
+          <DepositAmount
+            amount={amount}
+            currency={currency}
+            onChangeAmount={setAmount}
+          />
+          <DepositTerm rate={rate} term={term} onChangeTerm={setTerm} />
+          <DepositDate
             term={term}
             startDate={startDate}
             onChangeStartDate={setStartDate}

@@ -9,6 +9,7 @@ const DepositType = (props: IProps) => {
   return (
     <Wrapper>
       <SelectLabel>
+        Тип депозита
         <Select></Select>
       </SelectLabel>
 
