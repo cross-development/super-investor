@@ -32,14 +32,14 @@ function App() {
     const amountWithProfit = amount + profit;
     const total = { currency, amount, amountWithProfit, profit };
 
-    handleDeposit(total);
+    amount && handleDeposit(total);
   };
 
   return (
     <Layout>
       <DepositForm onSubmit={handleSubmit}>
         <Calculator>
-          <DepositType />
+          <DepositType currency={currency} onChangeCurrency={setCurrency} />
           <DepositAmount
             amount={amount}
             currency={currency}

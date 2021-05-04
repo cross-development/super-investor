@@ -3,9 +3,12 @@ import React from "react";
 //Styles
 import { Wrapper, SelectLabel, Select, Radio } from "./DepositType.styles";
 
-interface IProps {}
+interface IProps {
+  currency: string;
+  onChangeCurrency: (currency: string) => void;
+}
 
-const DepositType = (props: IProps) => {
+const DepositType = ({ currency, onChangeCurrency }: IProps) => {
   return (
     <Wrapper>
       <SelectLabel>
@@ -14,7 +17,7 @@ const DepositType = (props: IProps) => {
       </SelectLabel>
 
       <Radio>
-        <input id="radio-1" type="radio" value="uah" name="currency" />
+        <input id="radio-1" type="radio" value="uah" name="currency" checked />
         <label htmlFor="radio-1">UAH</label>
       </Radio>
 
